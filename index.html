@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>P.S. Hair Salon & Wellness Spa | Randfontein</title>
+<meta name="description" content="Luxury-inspired beauty, wellness and glam experiences at P.S. Hair Salon & Wellness Spa in Randfontein. Book via Fresha, call or WhatsApp."/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --gold:#cba36a;
+  --gold-deep:#a97f45;
+  --gold-soft:#f2e1c8;
+  --blush:#dcb9b8;
+  --blush-soft:#f4e4e1;
+  --cream:#f8f2ed;
+  --white:#fffaf6;
+  --stone:#f1e7df;
+  --charcoal:#1f1916;
+  --charcoal-soft:#312723;
+  --text:#2c201b;
+  --text-mid:#6f5b53;
+  --text-light:#a28d84;
+  --border:rgba(203,163,106,0.18);
+  --shadow:0 10px 38px rgba(31,25,22,0.12);
+  --shadow-sm:0 4px 18px rgba(31,25,22,0.08);
+  --r:16px;
+  --r-lg:28px;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .75s cubic-bezier(.22,.68,0,1.1),transform .75s cubic-bezier(.22,.68,0,1.1)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .75s cubic-bezier(.22,.68,0,1.1),transform .75s cubic-bezier(.22,.68,0,1.1)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .75s cubic-bezier(.22,.68,0,1.1),transform .75s cubic-bezier(.22,.68,0,1.1)}
+.reveal-left.visible,.reveal-right.visible{opacity:1;transform:none}
+.delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}.delay-4{transition-delay:.4s}
+
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.14}
+h1{font-size:clamp(2.5rem,5.6vw,4.6rem)}
+h2{font-size:clamp(1.95rem,3.8vw,3.1rem)}
+h3{font-size:clamp(1.25rem,2.3vw,1.7rem)}
+p{font-size:1.03rem;color:var(--text-mid)}
+
+.container{max-width:1160px;margin:0 auto;padding:0 24px}
+.section{padding:100px 0}
+.tag{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);background:var(--gold-soft);padding:6px 14px;border-radius:999px;margin-bottom:16px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 32px;border-radius:999px;text-decoration:none;font-size:1rem;font-weight:600;border:none;cursor:pointer;transition:all .25s ease;white-space:nowrap}
+.btn-primary{background:var(--gold);color:#fff;box-shadow:0 8px 24px rgba(169,127,69,.28)}
+.btn-primary:hover{background:var(--gold-deep);transform:translateY(-2px)}
+.btn-secondary{background:var(--charcoal);color:#fff;box-shadow:0 8px 24px rgba(31,25,22,.22)}
+.btn-secondary:hover{background:#100d0b;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--charcoal);border:2px solid rgba(31,25,22,.14)}
+.btn-ghost:hover{background:var(--white)}
+.btn-white{background:#fff;color:var(--charcoal);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.btn-white:hover{transform:translateY(-2px)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:all .3s ease}
+nav.scrolled{background:rgba(255,250,246,.94);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(31,25,22,.08);padding:12px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-mark{width:48px;height:48px;border-radius:50%;overflow:hidden;border:2px solid rgba(203,163,106,.35);background:#000;flex-shrink:0}
+.nav-logo-mark img{width:100%;height:100%;object-fit:cover}
+.nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--charcoal)}
+.nav-logo-text span{color:var(--gold-deep)}
+.nav-links{display:flex;align-items:center;gap:30px;list-style:none}
+.nav-links a{text-decoration:none;font-size:.93rem;font-weight:500;color:var(--text-mid);transition:color .2s}
+.nav-links a:hover{color:var(--gold-deep)}
+.nav-cta{margin-left:8px}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.nav-hamburger span{width:24px;height:2px;background:var(--charcoal);border-radius:2px;display:block;transition:all .3s}
+
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(255,250,246,.98);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:28px;text-align:center}
+.mobile-menu.open{display:flex}
+.mobile-menu a{text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--charcoal);font-weight:600}
+.mobile-menu-close{position:absolute;top:22px;right:22px;background:none;border:none;font-size:1.65rem;color:var(--charcoal);cursor:pointer}
+
+#hero{min-height:100vh;background:linear-gradient(155deg,#fff7f1 0%,#f9f0eb 44%,#f1e0d0 100%);display:flex;align-items:center;padding-top:94px;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;top:-180px;right:-180px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(203,163,106,.18) 0%,transparent 72%)}
+#hero::after{content:'';position:absolute;bottom:-180px;left:-140px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(220,185,184,.22) 0%,transparent 72%)}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:24px;font-size:.85rem;font-weight:500;color:var(--gold-deep);box-shadow:var(--shadow-sm)}
+.hero-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--gold);display:block;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.58;transform:scale(1.28)}}
+.hero-title{margin-bottom:22px}
+.hero-title em{font-style:italic;color:var(--gold-deep)}
+.hero-desc{font-size:1.08rem;max-width:470px;margin-bottom:34px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:44px}
+.hero-stats{display:flex;gap:32px;flex-wrap:wrap;padding-top:26px;border-top:1px solid var(--border)}
+.hero-stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold-deep);display:block;line-height:1}
+.hero-stat-label{font-size:.8rem;font-weight:600;color:var(--text-light);letter-spacing:.05em;text-transform:uppercase}
+.hero-visual{position:relative}
+.hero-img-wrap{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:3/4;background:linear-gradient(135deg,var(--gold-soft),#e5d0b7);box-shadow:var(--shadow)}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.hero-float-card{position:absolute;bottom:-18px;left:-24px;background:var(--white);border-radius:var(--r);padding:14px 18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;min-width:190px}
+.hero-float-icon{width:40px;height:40px;border-radius:10px;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0}
+.hero-float-card strong{font-size:.92rem;color:var(--charcoal);display:block}
+.hero-float-card span{font-size:.8rem;color:var(--text-light)}
+.hero-float-card2{position:absolute;top:24px;right:-18px;background:var(--charcoal);color:#fff;border-radius:var(--r);padding:12px 16px;box-shadow:0 8px 30px rgba(31,25,22,.24)}
+.hero-float-card2 strong{display:block;font-size:1.25rem;font-family:'Cormorant Garamond',serif;line-height:1}
+.hero-float-card2 span{font-size:.78rem;opacity:.75}
+
+.strip{background:var(--charcoal);padding:16px 0;overflow:hidden}
+.strip-inner{display:flex;gap:52px;animation:marquee 24s linear infinite;width:max-content}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.strip-item{display:flex;align-items:center;gap:10px;font-size:.88rem;font-weight:500;color:rgba(255,255,255,.84);white-space:nowrap}
+.strip-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+#services{background:var(--white)}
+.services-intro{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:60px}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px}
+.service-card{background:var(--cream);border-radius:var(--r-lg);padding:34px 28px;border:1px solid transparent;transition:all .3s ease;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--gold-soft),transparent);opacity:0;transition:opacity .3s}
+.service-card:hover{border-color:var(--border);box-shadow:var(--shadow);transform:translateY(-4px)}
+.service-card:hover::before{opacity:1}
+.service-icon{width:52px;height:52px;border-radius:12px;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:1.45rem;margin-bottom:18px;position:relative;z-index:1}
+.service-card h3,.service-card p,.service-price{position:relative;z-index:1}
+.service-card h3{margin-bottom:10px}
+.service-card p{font-size:.93rem;margin-bottom:18px}
+.service-price{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--gold-deep)}
+.service-popular{position:absolute;top:14px;right:14px;background:var(--charcoal);color:#fff;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+
+#why{background:linear-gradient(160deg,var(--cream) 0%,#f7ece6 100%)}
+.why-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.why-visual{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow)}
+.why-visual img{width:100%;height:100%;object-fit:cover;object-position:center}
+.why-features{display:flex;flex-direction:column;gap:18px;margin-top:28px}
+.why-feature{display:flex;gap:16px;align-items:flex-start;background:var(--white);border-radius:var(--r);padding:18px 20px;box-shadow:var(--shadow-sm);border:1px solid var(--border);transition:transform .25s ease}
+.why-feature:hover{transform:translateX(6px)}
+.why-feature-icon{width:40px;height:40px;border-radius:10px;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.why-feature h4{font-family:'DM Sans',sans-serif;font-size:.97rem;font-weight:700;margin-bottom:4px}
+.why-feature p{font-size:.86rem}
+
+#gallery{background:var(--white)}
+.gallery-header{text-align:center;margin-bottom:48px}
+.gallery-header p{max-width:560px;margin:12px auto 0}
+.carousel-wrap{position:relative;overflow:hidden}
+.carousel-track{display:flex;gap:16px;transition:transform .5s cubic-bezier(.4,0,.2,1);will-change:transform}
+.carousel-slide{flex:0 0 calc(33.333% - 11px);border-radius:var(--r);overflow:hidden;aspect-ratio:3/4;position:relative;cursor:pointer}
+.carousel-slide img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.carousel-slide:hover img{transform:scale(1.04)}
+.carousel-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(31,25,22,.74) 0%,transparent 62%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:16px}
+.carousel-slide:hover .carousel-overlay{opacity:1}
+.carousel-overlay span{color:#fff;font-size:.84rem;font-weight:500}
+.carousel-controls{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:28px}
+.carousel-btn{width:44px;height:44px;border-radius:50%;border:2px solid var(--border);background:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--text-mid);transition:all .25s}
+.carousel-btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.carousel-dots{display:flex;gap:8px}
+.carousel-dot{width:8px;height:8px;border-radius:50%;background:rgba(203,163,106,.24);border:none;cursor:pointer;transition:all .25s}
+.carousel-dot.active{background:var(--gold-deep);width:22px;border-radius:4px}
+.gallery-cta-strip{background:var(--gold-soft);border-radius:var(--r-lg);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:40px}
+.gallery-cta-strip strong{display:block;color:var(--charcoal);font-size:1.05rem;margin-bottom:4px}
+.gallery-cta-strip p{margin:0}
+
+#specialties{background:var(--charcoal);overflow:hidden}
+#specialties h2{color:#fff}
+#specialties .tag{background:rgba(203,163,106,.16);color:#f2d7b2}
+.specialties-header{text-align:center;margin-bottom:56px}
+.specialties-header p{color:rgba(255,255,255,.62);max-width:560px;margin:12px auto 0}
+.specialties-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.look-card{border-radius:var(--r);padding:30px 26px;position:relative;overflow:hidden;transition:transform .3s ease}
+.look-card:hover{transform:translateY(-6px)}
+.lc-gold{background:linear-gradient(135deg,rgba(203,163,106,.34),rgba(203,163,106,.12));border:1px solid rgba(203,163,106,.24)}
+.lc-blush{background:linear-gradient(135deg,rgba(220,185,184,.32),rgba(220,185,184,.1));border:1px solid rgba(220,185,184,.22)}
+.lc-soft{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.look-card h3{color:#fff;margin-bottom:10px}
+.look-card p{color:rgba(255,255,255,.66);font-size:.92rem;margin-bottom:18px}
+.look-tag{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.58);font-size:.8rem}
+
+#book{background:linear-gradient(135deg,#ab7f47 0%,#cba36a 42%,#1f1916 140%);text-align:center;padding:88px 0;position:relative;overflow:hidden}
+#book::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(255,255,255,.16) 0%,transparent 60%),radial-gradient(ellipse at 80% 50%,rgba(220,185,184,.18) 0%,transparent 60%)}
+#book .container{position:relative;z-index:1}
+#book h2{color:#fff;margin-bottom:14px}
+#book p{color:rgba(255,255,255,.78);font-size:1.08rem;max-width:560px;margin:0 auto 34px}
+.book-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+.book-info{display:flex;justify-content:center;gap:34px;flex-wrap:wrap}
+.book-info-item{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.78);font-size:.88rem}
+
+#testimonials{background:var(--white)}
+.testimonials-header{text-align:center;margin-bottom:54px}
+.testimonials-header p{max-width:500px;margin:12px auto 0}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.testimonial-card{background:var(--cream);border-radius:var(--r-lg);padding:30px 26px;border:1px solid var(--border);transition:box-shadow .3s}
+.testimonial-card:hover{box-shadow:var(--shadow)}
+.stars{color:#e3ab42;font-size:1rem;margin-bottom:14px;letter-spacing:2px}
+.testimonial-text{font-size:.97rem;color:var(--text-mid);font-style:italic;margin-bottom:18px;line-height:1.72}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.author-avatar{width:38px;height:38px;border-radius:50%;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--gold-deep)}
+.author-name{font-weight:700;font-size:.9rem;color:var(--charcoal)}
+.author-loc{font-size:.78rem;color:var(--text-light)}
+
+#contact{background:var(--cream)}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.contact-items{display:flex;flex-direction:column;gap:14px;margin:32px 0}
+.contact-item{display:flex;align-items:center;gap:14px;background:var(--white);border-radius:var(--r);padding:14px 18px;border:1px solid var(--border)}
+.contact-item-icon{width:38px;height:38px;border-radius:10px;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.contact-item strong{font-size:.88rem;color:var(--charcoal);display:block}
+.contact-item span{font-size:.82rem;color:var(--text-light)}
+.hours-card{background:var(--white);border-radius:var(--r);padding:18px 22px;border:1px solid var(--border);margin-bottom:22px}
+.hours-card h4{font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px}
+.hours-row{display:flex;justify-content:space-between;gap:20px;padding:7px 0;font-size:.88rem;border-bottom:1px solid var(--border)}
+.hours-row:last-child{border-bottom:none}
+.hours-row .day{color:var(--text-mid)}
+.hours-row .time{font-weight:600;color:var(--charcoal)}
+.contact-map{border-radius:var(--r-lg);overflow:hidden;background:linear-gradient(135deg,var(--gold-soft),#ead6be);min-height:340px;border:1px solid var(--border);display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;padding:22px;position:relative;gap:24px}
+.contact-map::before{content:'';position:absolute;right:-40px;bottom:-50px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.22)}
+.contact-map h3,.contact-map p,.contact-map .btn,.map-frame,.map-details{position:relative;z-index:1}
+.contact-map h3{color:var(--charcoal);margin-bottom:12px}
+.contact-map p{max-width:420px;margin-bottom:18px;color:var(--charcoal-soft)}
+.map-frame{width:100%;height:300px;border-radius:28px;overflow:hidden;border:1px solid rgba(61,44,34,.08);box-shadow:0 18px 40px rgba(30,25,18,.08)}
+.map-frame iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.95) contrast(1.02)}
+.map-details{padding:12px 12px 4px}
+
+footer{background:var(--charcoal);padding:56px 0 26px}
+.footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:42px}
+.footer-brand .nav-logo-text{color:#fff}
+.footer-brand p{color:rgba(255,255,255,.56);margin-top:14px;font-size:.9rem;max-width:320px}
+.footer-col h5{font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:14px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col a{text-decoration:none;color:rgba(255,255,255,.68);font-size:.9rem;transition:color .2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.footer-bottom p{color:rgba(255,255,255,.4);font-size:.82rem}
+.social-links{display:flex;gap:10px}
+.social-link{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.82rem;color:rgba(255,255,255,.65);transition:all .2s}
+.social-link:hover{background:var(--gold);color:#fff}
+
+.wa-fab{position:fixed;right:24px;bottom:24px;z-index:200;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 8px 28px rgba(37,211,102,.4);font-size:1.4rem;transition:all .25s ease}
+.wa-fab:hover{transform:scale(1.1)}
+
+.lightbox{position:fixed;inset:0;background:rgba(15,12,10,.88);display:none;align-items:center;justify-content:center;padding:24px;z-index:250}
+.lightbox.open{display:flex}
+.lightbox img{max-width:min(92vw,900px);max-height:86vh;border-radius:22px;box-shadow:0 18px 60px rgba(0,0,0,.35)}
+.lightbox-close{position:absolute;top:24px;right:24px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
+
+@media(max-width:900px){
+  .hero-inner,.why-inner,.services-intro,.contact-inner{grid-template-columns:1fr;gap:40px}
+  .hero-visual{order:-1;max-width:430px;width:100%;margin:0 auto}
+  .hero-float-card2{display:none}
+  .specialties-grid{grid-template-columns:1fr 1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .nav-links,.nav-cta{display:none}
+  .nav-hamburger{display:flex}
+  .carousel-slide{flex:0 0 calc(50% - 8px)}
+}
+@media(max-width:600px){
+  .section{padding:64px 0}
+  .hero-inner{gap:32px;padding-bottom:16px}
+  .hero-desc{font-size:1rem}
+  .hero-btns .btn{padding:13px 22px;font-size:.93rem}
+  .hero-stats{gap:20px}
+  .hero-stat-num{font-size:1.7rem}
+  .hero-float-card{display:none}
+  .specialties-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .gallery-cta-strip{flex-direction:column;text-align:center}
+  .book-info{flex-direction:column;gap:12px;align-items:center}
+  .carousel-slide{flex:0 0 100%}
+}
+</style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+  <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#why" onclick="closeMobileMenu()">About</a>
+  <a href="#gallery" onclick="closeMobileMenu()">Gallery</a>
+  <a href="#testimonials" onclick="closeMobileMenu()">Experience</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  <a href="https://www.fresha.com/lvp/p-s-hair-salon-wellness-spa-6th-street-johannesburg-gn3MGl" target="_blank" rel="noopener" class="btn btn-primary">Book on Fresha ✨</a>
+</div>
+
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <div class="nav-logo-mark"><img src="logo.jpeg" alt="P.S. Hair Salon & Wellness Spa logo"></div>
+        <span class="nav-logo-text">P.S. <span>Wellness & Beauty</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="https://www.fresha.com/lvp/p-s-hair-salon-wellness-spa-6th-street-johannesburg-gn3MGl" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Book on Fresha ✨</a>
+      <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge reveal">Luxury beauty & wellness · Randfontein</div>
+        <h1 class="hero-title reveal delay-1">Beauty, calm and confidence in one <em>elevated space.</em></h1>
+        <p class="hero-desc reveal delay-2">P.S. Hair Salon & Wellness Spa blends beauty, wellness and glam in a warm, polished environment designed to make every visit feel special. From facials and body treatments to makeup, threading and salon care, your next self-care day starts here.</p>
+        <div class="hero-btns reveal delay-3">
+          <a href="https://www.fresha.com/lvp/p-s-hair-salon-wellness-spa-6th-street-johannesburg-gn3MGl" target="_blank" rel="noopener" class="btn btn-primary">✨ Book on Fresha</a>
+          <a href="https://wa.me/27728324118" target="_blank" rel="noopener" class="btn btn-ghost">💬 WhatsApp Us</a>
+        </div>
+        <div class="hero-stats reveal delay-4">
+          <div>
+            <span class="hero-stat-num">56 6th St</span>
+            <span class="hero-stat-label">Randfontein</span>
+          </div>
+          <div>
+            <span class="hero-stat-num">Fresha</span>
+            <span class="hero-stat-label">Online booking</span>
+          </div>
+          <div>
+            <span class="hero-stat-num">072 832 4118</span>
+            <span class="hero-stat-label">Call or WhatsApp</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual reveal delay-2">
+        <div class="hero-img-wrap"><img src="owner-standing.jpg" alt="Owner standing inside P.S. Hair Salon & Wellness Spa"></div>
+        <div class="hero-float-card">
+          <div class="hero-float-icon">✨</div>
+          <div>
+            <strong>Beauty & wellness lounge</strong>
+            <span>Elegant, warm and welcoming</span>
+          </div>
+        </div>
+        <div class="hero-float-card2">
+          <strong>Book</strong>
+          <span>via Fresha</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-inner">
+    <span class="strip-item"><span class="strip-dot"></span>Facials & skincare</span>
+    <span class="strip-item"><span class="strip-dot"></span>Body sculpting</span>
+    <span class="strip-item"><span class="strip-dot"></span>Eyebrow threading</span>
+    <span class="strip-item"><span class="strip-dot"></span>Makeup services</span>
+    <span class="strip-item"><span class="strip-dot"></span>Hair salon & beauty care</span>
+    <span class="strip-item"><span class="strip-dot"></span>Luxury pamper moments</span>
+    <span class="strip-item"><span class="strip-dot"></span>Facials & skincare</span>
+    <span class="strip-item"><span class="strip-dot"></span>Body sculpting</span>
+    <span class="strip-item"><span class="strip-dot"></span>Eyebrow threading</span>
+    <span class="strip-item"><span class="strip-dot"></span>Makeup services</span>
+    <span class="strip-item"><span class="strip-dot"></span>Hair salon & beauty care</span>
+    <span class="strip-item"><span class="strip-dot"></span>Luxury pamper moments</span>
+  </div>
+</div>
+
+<section id="services" class="section">
+  <div class="container">
+    <div class="services-intro">
+      <div class="reveal">
+        <span class="tag">Services</span>
+        <h2>Your beauty day, styled with <em>care and intention</em></h2>
+      </div>
+      <div class="reveal delay-1">
+        <p>P.S. offers a polished beauty experience for clients who want more than a quick appointment. Think calm surroundings, a luxury feel, and treatments that help you leave looking refreshed and feeling seen.</p>
+        <br>
+        <a href="https://www.fresha.com/lvp/p-s-hair-salon-wellness-spa-6th-street-johannesburg-gn3MGl" target="_blank" rel="noopener" class="btn btn-secondary">View bookings →</a>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal delay-1">
+        <div class="service-popular">Most booked</div>
+        <div class="service-icon">🧖🏽‍♀️</div>
+        <h3>Facials & skincare</h3>
+        <p>Glow-boosting facial appointments designed to refresh, restore and leave skin looking smooth and luminous.</p>
+        <span class="service-price">Skin-focused care</span>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-icon">✨</div>
+        <h3>Makeup services</h3>
+        <p>Whether it is soft glam, occasion glam or a polished finish for an event, step out feeling photo-ready and confident.</p>
+        <span class="service-price">Glam appointments</span>
+      </div>
+      <div class="service-card reveal delay-3">
+        <div class="service-icon">🌿</div>
+        <h3>Body sculpting</h3>
+        <p>Wellness-led body sessions for clients wanting beauty and body care in one serene, elevated environment.</p>
+        <span class="service-price">Wellness focused</span>
+      </div>
+      <div class="service-card reveal delay-1">
+        <div class="service-icon">🪄</div>
+        <h3>Eyebrow threading</h3>
+        <p>Clean, precise shaping that frames the face beautifully and instantly sharpens your overall look.</p>
+        <span class="service-price">Detail-driven finish</span>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-icon">💇🏽‍♀️</div>
+        <h3>Hair salon care</h3>
+        <p>A beauty destination that also welcomes your hair appointments, creating a complete self-care stop under one roof.</p>
+        <span class="service-price">Beauty & salon feel</span>
+      </div>
+      <div class="service-card reveal delay-3">
+        <div class="service-icon">🥂</div>
+        <h3>Pamper-day atmosphere</h3>
+        <p>More than a treatment. Enjoy a warm, stylish, luxurious setting built around comfort, confidence and relaxation.</p>
+        <span class="service-price">Luxury experience</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="section">
+  <div class="container">
+    <div class="why-inner">
+      <div class="why-visual reveal reveal-left"><img src="treatment-room.jpg" alt="Treatment room at P.S. Hair Salon & Wellness Spa"></div>
+      <div class="reveal reveal-right">
+        <span class="tag">About P.S.</span>
+        <h2>More than an appointment, it is a <em>full beauty experience</em></h2>
+        <p style="margin-top:14px;">P.S. Hair Salon & Wellness Spa is designed for clients who love a clean, elegant and intimate beauty space. Every corner feels calm, feminine and inviting, making it easy to slow down, reset and enjoy your time in the chair or treatment room.</p>
+        <div class="why-features">
+          <div class="why-feature">
+            <div class="why-feature-icon">🖤</div>
+            <div>
+              <h4>Luxury-inspired aesthetic</h4>
+              <p>A warm black, gold and cream identity that feels polished, premium and beautifully memorable.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-icon">📍</div>
+            <div>
+              <h4>Easy to find</h4>
+              <p>Conveniently located at 56 6th St, Randfontein, Johannesburg, with directions available online.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-icon">📲</div>
+            <div>
+              <h4>Fast booking options</h4>
+              <p>Book on Fresha or message directly on WhatsApp for a smooth, simple reservation experience.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-icon">🌸</div>
+            <div>
+              <h4>Beauty meets wellness</h4>
+              <p>Facials, body treatments, glam and salon care in a space created to help you look good and feel even better.</p>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;">
+          <a href="https://www.fresha.com/lvp/p-s-hair-salon-wellness-spa-6th-street-johannesburg-gn3MGl" target="_blank" rel="noopener" class="btn btn-primary">Reserve your visit →</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=56+6th+St,+Randfontein,+Johannesburg,+1759,+South+Africa" target="_blank" rel="noopener" class="btn btn-ghost">Get directions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="section">
+  <div class="container">
+    <div class="gallery-header">
+      <span class="tag reveal">Gallery</span>
+      <h2 class="reveal delay-1">A closer look at the space</h2>
+      <p class="reveal delay-2">The feel of P.S. is part of the experience: soft light, warm tones, elegant details and a luxurious atmosphere built for relaxation and confidence.</p>
+    </div>
+
+    <div class="carousel-wrap reveal delay-2">
+      <div class="carousel-track" id="galleryTrack">
+        <div class="carousel-slide" data-full="owner-standing.jpg">
+          <img src="owner-standing.jpg" alt="Interior and owner inside P.S. salon">
+          <div class="carousel-overlay"><span>Front lounge elegance</span></div>
+        </div>
+        <div class="carousel-slide" data-full="owner-seated.jpg">
+          <img src="owner-seated.jpg" alt="Owner seated inside P.S. salon">
+          <div class="carousel-overlay"><span>Warm beauty-lounge moments</span></div>
+        </div>
+        <div class="carousel-slide" data-full="lounge-kid.jpg">
+          <img src="lounge-kid.jpg" alt="Comfortable salon lounge seating">
+          <div class="carousel-overlay"><span>Family-friendly, welcoming atmosphere</span></div>
+        </div>
+        <div class="carousel-slide" data-full="lounge-art.jpg">
+          <img src="lounge-art.jpg" alt="Stylish waiting area with art wall">
+          <div class="carousel-overlay"><span>Signature décor and soft light</span></div>
+        </div>
+        <div class="carousel-slide" data-full="treatment-room.jpg">
+          <img src="treatment-room.jpg" alt="Treatment room setup">
+          <div class="carousel-overlay"><span>Private treatment room</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-controls reveal delay-3">
+      <button class="carousel-btn" id="prevBtn" aria-label="Previous slide">←</button>
+      <div class="carousel-dots" id="carouselDots"></div>
+      <button class="carousel-btn" id="nextBtn" aria-label="Next slide">→</button>
+    </div>
+
+    <div class="gallery-cta-strip reveal delay-4">
+      <div>
+        <strong>Ready for your next beauty appointment?</strong>
+        <p>Book your visit online or send a WhatsApp message and we will guide you from there.</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="https://www.fresha.com/lvp/p-s-hair-salon-wellness-spa-6th-street-johannesburg-gn3MGl" target="_blank" rel="noopener" class="btn btn-primary">Book online</a>
+        <a href="https://wa.me/27728324118" target="_blank" rel="noopener" class="btn btn-secondary">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="specialties" class="section">
+  <div class="container">
+    <div class="specialties-header reveal">
+      <span class="tag">Why clients love it here</span>
+      <h2>Signature moments at P.S.</h2>
+      <p>It is the blend of atmosphere, beauty care and polished presentation that makes this space feel different from an ordinary appointment.</p>
+    </div>
+    <div class="specialties-grid">
+      <div class="look-card lc-gold reveal delay-1">
+        <div style="font-size:2rem;margin-bottom:14px">👑</div>
+        <h3>The luxury feel</h3>
+        <p>Black-and-gold branding, elegant furniture and a refined mood give every visit a polished, high-end edge.</p>
+        <span class="look-tag">✨ Premium atmosphere</span>
+      </div>
+      <div class="look-card lc-blush reveal delay-2">
+        <div style="font-size:2rem;margin-bottom:14px">🧘🏽‍♀️</div>
+        <h3>The wellness pause</h3>
+        <p>A calm setting that allows clients to slow down, reset and enjoy self-care instead of rushing through a service.</p>
+        <span class="look-tag">🌿 Relaxing environment</span>
+      </div>
+      <div class="look-card lc-soft reveal delay-3">
+        <div style="font-size:2rem;margin-bottom:14px">💄</div>
+        <h3>The glam touch</h3>
+        <p>Beauty services that help you look finished, feminine and confident whether it is a casual day or a special event.</p>
+        <span class="look-tag">💫 Beauty confidence</span>
+      </div>
+      <div class="look-card lc-soft reveal delay-1">
+        <div style="font-size:2rem;margin-bottom:14px">📸</div>
+        <h3>The photo-ready space</h3>
+        <p>Every corner of the salon is visually warm and stylish, making the space feel as good in photos as it does in person.</p>
+        <span class="look-tag">📷 Beautiful interiors</span>
+      </div>
+      <div class="look-card lc-gold reveal delay-2">
+        <div style="font-size:2rem;margin-bottom:14px">🤍</div>
+        <h3>The welcoming mood</h3>
+        <p>Comfortable seating, soft lighting and thoughtful details create a space clients genuinely enjoy returning to.</p>
+        <span class="look-tag">🏡 Warm reception</span>
+      </div>
+      <div class="look-card lc-blush reveal delay-3">
+        <div style="font-size:2rem;margin-bottom:14px">📲</div>
+        <h3>The easy booking flow</h3>
+        <p>With Fresha, call and WhatsApp options, it is simple to move from interest to confirmed booking in just a few taps.</p>
+        <span class="look-tag">⚡ Quick booking</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="container">
+    <span class="tag reveal" style="background:rgba(255,255,255,.16);color:#fff;">Your next pamper day starts here</span>
+    <h2 class="reveal delay-1">Ready to book your beauty moment?</h2>
+    <p class="reveal delay-2">Reserve your appointment with P.S. Hair Salon & Wellness Spa online through Fresha, or contact the salon directly for quick help with your booking.</p>
+    <div class="book-btns reveal delay-3">
+      <a href="https://www.fresha.com/lvp/p-s-hair-salon-wellness-spa-6th-street-johannesburg-gn3MGl" target="_blank" rel="noopener" class="btn btn-white">✨ Book on Fresha</a>
+      <a href="https://wa.me/27728324118" target="_blank" rel="noopener" class="btn btn-ghost" style="border-color:rgba(255,255,255,.4);color:#fff;">💬 WhatsApp</a>
+    </div>
+    <div class="book-info reveal delay-4">
+      <span class="book-info-item">📞 072 832 4118</span>
+      <span class="book-info-item">📍 56 6th St, Randfontein</span>
+      <span class="book-info-item">🖤 Luxury beauty & wellness</span>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="testimonials-header">
+      <span class="tag reveal">The vibe</span>
+      <h2 class="reveal delay-1">What the experience feels like</h2>
+      <p class="reveal delay-2">This section is styled like Celeste's client-love block, but tailored to the luxury, warm and welcoming feel shown in the salon photos you shared.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal delay-1">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">“From the moment you walk in, the space feels intimate, beautiful and calming. It already feels like self-care before the treatment even begins.”</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">P</div>
+          <div>
+            <div class="author-name">Luxury atmosphere</div>
+            <div class="author-loc">Elegant, feminine, polished</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-2">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">“The interior gives boutique-spa energy. It feels warm, stylish and welcoming, which makes the whole appointment feel more premium.”</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">S</div>
+          <div>
+            <div class="author-name">Spa-style comfort</div>
+            <div class="author-loc">Soft light and relaxed mood</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-3">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">“It is the type of place where you can get ready, unwind and enjoy the moment. Everything feels curated to make clients feel confident and cared for.”</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">B</div>
+          <div>
+            <div class="author-name">Beauty-meets-wellness</div>
+            <div class="author-loc">Pamper-day destination</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-info reveal reveal-left">
+        <span class="tag">Contact</span>
+        <h2>Book, call or visit the salon</h2>
+        <p>Everything you need to reach P.S. Hair Salon & Wellness Spa is right here. Choose the quickest option for you and secure your appointment.</p>
+
+        <div class="contact-items">
+          <a class="contact-item" href="tel:+27728324118">
+            <div class="contact-item-icon">📞</div>
+            <div>
+              <strong>Call the salon</strong>
+              <span>072 832 4118</span>
+            </div>
+          </a>
+          <a class="contact-item" href="https://wa.me/27728324118" target="_blank" rel="noopener">
+            <div class="contact-item-icon">💬</div>
+            <div>
+              <strong>WhatsApp us</strong>
+              <span>Quick booking and direct enquiries</span>
+            </div>
+          </a>
+          <a class="contact-item" href="https://www.google.com/maps/search/?api=1&query=56+6th+St,+Randfontein,+Johannesburg,+1759,+South+Africa" target="_blank" rel="noopener">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <strong>Visit us</strong>
+              <span>56 6th St, Randfontein, Johannesburg, 1759</span>
+            </div>
+          </a>
+          <a class="contact-item" href="https://www.fresha.com/lvp/p-s-hair-salon-wellness-spa-6th-street-johannesburg-gn3MGl" target="_blank" rel="noopener">
+            <div class="contact-item-icon">✨</div>
+            <div>
+              <strong>Book online</strong>
+              <span>Reserve your slot through Fresha</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="hours-card">
+          <h4>Opening hours</h4>
+          <div class="hours-row"><span class="day">Monday</span><span class="time">Closed</span></div>
+          <div class="hours-row"><span class="day">Tuesday</span><span class="time">9am – 6pm</span></div>
+          <div class="hours-row"><span class="day">Wednesday</span><span class="time">9am – 5pm</span></div>
+          <div class="hours-row"><span class="day">Thursday</span><span class="time">9am – 6pm</span></div>
+          <div class="hours-row"><span class="day">Friday</span><span class="time">9am – 6pm</span></div>
+          <div class="hours-row"><span class="day">Saturday</span><span class="time">11am – 6pm</span></div>
+          <div class="hours-row"><span class="day">Sunday</span><span class="time">10am – 5pm</span></div>
+        </div>
+      </div>
+
+      <div class="contact-map reveal reveal-right">
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps?q=56+6th+St,+Randfontein,+Johannesburg,+1759,+South+Africa&z=15&output=embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            title="P.S. Hair Salon & Wellness Spa location map">
+          </iframe>
+        </div>
+
+        <div class="map-details">
+          <h3>P.S. Hair Salon & Wellness Spa</h3>
+          <p>Located at 56 6th St, Randfontein, Johannesburg, 1759, South Africa. Ideal for clients looking for a luxury-feel beauty and wellness destination close to home.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=56+6th+St,+Randfontein,+Johannesburg,+1759,+South+Africa" target="_blank" rel="noopener" class="btn btn-secondary">Open directions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo">
+          <div class="nav-logo-mark"><img src="logo.jpeg" alt="P.S. Hair Salon & Wellness Spa logo"></div>
+          <span class="nav-logo-text">P.S. <span>Wellness & Beauty</span></span>
+        </a>
+        <p>A luxury-inspired beauty and wellness website built in the Celeste layout style, adapted for P.S. Hair Salon & Wellness Spa with Fresha booking links and the salon details you shared.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Quick links</h5>
+        <ul>
+          <li><a href="https://www.fresha.com/lvp/p-s-hair-salon-wellness-spa-6th-street-johannesburg-gn3MGl" target="_blank" rel="noopener">Book on Fresha</a></li>
+          <li><a href="https://wa.me/27728324118" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="tel:+27728324118">Call now</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=56+6th+St,+Randfontein,+Johannesburg,+1759,+South+Africa" target="_blank" rel="noopener">Directions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 P.S. Hair Salon & Wellness Spa. All rights reserved.</p>
+      <div class="social-links">
+        <a class="social-link" href="https://wa.me/27728324118" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+        <a class="social-link" href="tel:+27728324118" aria-label="Call">☎</a>
+        <a class="social-link" href="https://www.fresha.com/lvp/p-s-hair-salon-wellness-spa-6th-street-johannesburg-gn3MGl" target="_blank" rel="noopener" aria-label="Fresha">✦</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/27728324118" target="_blank" rel="noopener" aria-label="WhatsApp P.S. Hair Salon & Wellness Spa">💬</a>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">✕</button>
+  <img id="lightboxImg" src="" alt="Expanded gallery image">
+</div>
+
+<script>
+const navbar = document.getElementById('navbar');
+const mobileMenu = document.getElementById('mobileMenu');
+function toggleMobileMenu(){ mobileMenu.classList.toggle('open'); }
+function closeMobileMenu(){ mobileMenu.classList.remove('open'); }
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 24);
+});
+
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', closeMobileMenu);
+});
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry => {
+    if(entry.isIntersecting){ entry.target.classList.add('visible'); }
+  });
+},{threshold:0.16});
+
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => observer.observe(el));
+
+const track = document.getElementById('galleryTrack');
+const slides = [...document.querySelectorAll('.carousel-slide')];
+const dotsWrap = document.getElementById('carouselDots');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+let current = 0;
+
+function slidesPerView(){
+  if(window.innerWidth <= 600) return 1;
+  if(window.innerWidth <= 900) return 2;
+  return 3;
+}
+
+function totalPages(){
+  return Math.max(1, slides.length - slidesPerView() + 1);
+}
+
+function buildDots(){
+  dotsWrap.innerHTML = '';
+  for(let i=0;i<totalPages();i++){
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === current ? ' active' : '');
+    dot.setAttribute('aria-label', 'Go to slide ' + (i+1));
+    dot.addEventListener('click', ()=>{ current = i; updateCarousel(); });
+    dotsWrap.appendChild(dot);
+  }
+}
+
+function updateCarousel(){
+  const perView = slidesPerView();
+  const gap = 16;
+  const wrapWidth = track.parentElement.offsetWidth;
+  const slideWidth = (wrapWidth - (gap * (perView - 1))) / perView;
+  const offset = current * (slideWidth + gap);
+  track.style.transform = `translateX(-${offset}px)`;
+  [...dotsWrap.children].forEach((dot, i)=>dot.classList.toggle('active', i === current));
+}
+
+prevBtn.addEventListener('click', ()=>{
+  current = Math.max(0, current - 1);
+  updateCarousel();
+});
+
+nextBtn.addEventListener('click', ()=>{
+  current = Math.min(totalPages() - 1, current + 1);
+  updateCarousel();
+});
+
+window.addEventListener('resize', ()=>{
+  current = Math.min(current, totalPages() - 1);
+  buildDots();
+  updateCarousel();
+});
+
+buildDots();
+updateCarousel();
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+slides.forEach(slide => {
+  slide.addEventListener('click', ()=>{
+    lightboxImg.src = slide.dataset.full;
+    lightbox.classList.add('open');
+  });
+});
+lightboxClose.addEventListener('click', ()=> lightbox.classList.remove('open'));
+lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) lightbox.classList.remove('open'); });
+document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') lightbox.classList.remove('open'); });
+</script>
+</body>
+</html>
